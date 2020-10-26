@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-//import { Chat, Favorite, Reply } from "../../styles/icons";
+import { Chat, Favorite, Reply } from "../../styles/icons";
 
 export const Container = styled.div`
     display: flex;
@@ -104,11 +104,50 @@ export const Image = styled.div`
 
 export const Icons = styled.div`
     width: 100%;
-    
+
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 11px auto 0;
+    width: 100%;
+
+    @media(min-width: 330px) {
+        width: 64%;
+    }
+
+    > div {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
 `;
-export const Status = styled.div``;
-export const CommentIcon = styled.div``;
-export const RetweetIcon = styled.div``;
-export const LikeIcon = styled.div``;
+
+export const Status = styled.div`
+    display: flex;
+    align-items: center;
+
+    font-size: 14px;
+
+    > svg path {
+        margin-right: 4px;
+        color: var(--gray);
+    }
+`;
+
+const iconCSS = css`
+    width: 18px;
+    height: 18px;
+`;
+
+export const CommentIcon = styled(Chat)`
+    ${iconCSS}
+`;
+export const RetweetIcon = styled(Reply)`
+    ${iconCSS}
+`;
+export const LikeIcon = styled(Favorite)`
+    ${iconCSS}
+`;
