@@ -26,5 +26,10 @@ export const Tab = styled.div`
 export const Tweets = styled.div`
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;   
+    flex-shrink: 0;  
+    padding-bottom: 44px; 
+
+    @media(min-width: 576px) {
+      padding-bottom: 0;
+    }
 `;
