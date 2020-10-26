@@ -41,5 +41,9 @@ export default createGlobalStyle`
         --twitter-light-hover: #2C8ED6;
     }
 
+    li {
+        list-style: none;
+    }
+
     
 `;
